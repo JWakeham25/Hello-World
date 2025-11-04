@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-int maain(){
+int main(){
     int distance;
     string petrolOrDiesel;
     float pricePerLitre;
