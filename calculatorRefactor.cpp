@@ -7,7 +7,7 @@ int num1, num2, total;
 //declare functions here
 
  
-void calculatorMenu(){
+int calculatorMenu(){
     cout << "Welcome to the calculator" << endl;
     cout << "---------------------" << endl;
     
@@ -22,12 +22,13 @@ void calculatorMenu(){
     
     cout << "What calculation do you want to perform" << endl;
     cout << "1: Addition \n2: Subtraction\n3: Division\n4: Multiplication" << endl;
-}
 
-void userChoice(){
     int choice;
     cin >> choice;
-    
+    return choice;
+}
+
+int calculationChoice(choice){
     if(choice == 1){
         total = num1 + num2;
     }else if(choice == 2){
@@ -37,9 +38,10 @@ void userChoice(){
     }else if(choice == 4){
         total = num1 * num2;
     }
+    return total;
 }
 
-void result(){
+void result(total){
     cout << "Result" << endl;
     cout << "---------------------" << endl;
     cout << total << endl;
@@ -49,9 +51,7 @@ void result(){
  
 //define functions here
 int main(){
-    calculatorMenu();
-    userChoice();
-    result();
+    result(calculationChoice(calculatorMenu()));
 
     return 0;
 }
